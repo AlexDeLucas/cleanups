@@ -23,6 +23,10 @@
     </section>
   </nav>
 
+  <%= link_to "Home", root_path %>
+  <%= link_to "Log A Cleanup", root_path %>
+  <%= link_to "View Cleanups", root_path %>
+
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>

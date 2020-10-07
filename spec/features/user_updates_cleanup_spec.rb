@@ -9,7 +9,7 @@ feature 'user updates cleanup', %Q{
     let(:user) { FactoryBot.create(:user) }
     let!(:cleanup_2) { FactoryBot.create(:cleanup, user: user) }
 
-    scenario 'updates outdoor adventure' do
+    scenario 'update cleanup' do
         login_as(user, :scope => :user)
         visit cleanup_path(cleanup_2)
         click_on 'Edit'

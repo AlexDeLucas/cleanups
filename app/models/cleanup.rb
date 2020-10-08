@@ -9,5 +9,5 @@ class Cleanup < ApplicationRecord
     validates :total_trash, presence: true
     belongs_to :user
 
-    mount_uploader :cleanup_photo, CleanupPhotoUploader
+    # mount_uploader :cleanup_photo, CleanupPhotoUploader
 end 

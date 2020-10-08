@@ -17,7 +17,7 @@ feature 'user updates cleanup', %Q{
       fill_in 'Posted By', with: 'Mr. Collins'
       fill_in 'State', with: 'NY'
       fill_in 'City', with: 'Port Kent'
-      fill_in 'Total Trash Collected', with: 16
+      fill_in 'Total Trash (lbs.)', with: 16
       fill_in 'Description', with: 'We cleaned up a lot of litter!'
       click_button 'Save Changes'
 

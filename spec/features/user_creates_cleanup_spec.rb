@@ -18,10 +18,10 @@ feature 'user creates new cleanup', %Q{
       fill_in 'State', with: 'MA'
       fill_in 'City', with: 'Salem'
       fill_in 'Cleanup Type', with: 'Coastal'
-      fill_in 'Volunteers', with: 1
-      fill_in 'Total Trash', with: 4
+      fill_in 'Number of Volunteers', with: 1
+      fill_in 'Total Trash (lbs.)', with: 4
       fill_in 'Description', with: 'Most common items were fishing line and glass bottles.'
-      click_button 'Submit'
+      click_button 'Log Cleanup'
 
       expect(page).to have_content('You logged a cleanup!')
       expect(page).to have_content('Salem Cleanup Day 2020')
@@ -39,7 +39,7 @@ feature 'user creates new cleanup', %Q{
       login_as(user, :scope => :user)
       visit new_cleanup_path
 
-      click_button 'Submit'
+      click_button 'Log Cleanup'
       expect(page).to have_content('Please provide the following information before submitting: title, posted by, date, state, city, cleanup type, volunteers, total trash')
       expect(page).to_not have_content('You logged a cleanup!')
     end

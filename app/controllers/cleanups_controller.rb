@@ -6,6 +6,7 @@ class CleanupsController < ApplicationController
 
     # GET /cleanups/new
     def new
+        @cleanup = Cleanup.new 
     end
     
 end

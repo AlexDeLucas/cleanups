@@ -1,0 +1,13 @@
+<%= form_for(@cleanup) do |f| %>
+
+<div class="field">
+    <%= f.label :title, "Title" %><br />
+    <%= f.text_field :title %>
+</div>
+
+<div class="field">
+    <%= f.label :posted_by, "Posted By" %><br />
+    <%= f.text_field :posted_by %>
+</div>
+
+<% end %>

@@ -10,4 +10,43 @@
     <%= f.text_field :posted_by %>
 </div>
 
+<div class="field">
+    <%= f.label :date, "Date (MM/DD/YYYY)" %><br />
+    <%= f.date_field :date %>
+</div>
+
+<div class="field">
+    <%= f.label :state, "State" %><br />
+    <%= f.select(:state, @state_collection) %>
+</div>
+
+<div class="field">
+    <%= f.label :city, "City" %><br />
+    <%= f.text_field :city %>
+</div>
+
+<div class="field">
+    <%= f.label :cleanup_type, "Cleanup Type" %><br />
+    <%= collection_radio_buttons :cleanup, :cleanup_type, @cleanup_type_collection, :first, :last %>
+</div>
+
+<div class="field">
+    <%= f.label :volunteers, "Number of Volunteers" %><br />
+    <%= f.number_field :volunteers %>
+</div>
+
+<div class="field">
+    <%= f.label :total_trash, "Total Trash (lbs.)" %><br />
+    <%= f.number_field :total_trash %>
+</div>
+
+<div class="field">
+    <%= f.label :description, "Description" %><br />
+    <%= f.text_area :description %>
+</div>
+
+<div class="actions">
+    <%= f.submit "Log Cleanup" %>
+</div>
+
 <% end %>

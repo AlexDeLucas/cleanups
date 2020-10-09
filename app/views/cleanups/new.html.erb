@@ -1,3 +1,9 @@
 <h1>Log A Cleanup</h1>
 
-<%= render 'cleanup_form' %>
+<div>
+  <% if user_signed_in? %>
+        <%= render 'cleanup_form' %>
+    <% else %>
+        <p><%= 'Interested in logging a cleanup? Excellent! Please sign in, or sign up for a new account--it\'s free!' %></p>
+  <% end %>
+</div>

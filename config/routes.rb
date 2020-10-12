@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     resources :states
       resources :cities
   end
-
+  
+  get 'users/:user_id/cleanups', to: 'users#index'
+  get '/users/:user_id/cleanups/:id/edit', to: 'users#edit'
+  get '/users/:user_id/cleanups/:id', to: 'users#update'
+  get '/users/:user_id/cleanups/:id', to: 'users#update'
+  get '/users/:user_id/cleanups/:id', to: 'users#delete'
   resources :users do
     resources :cleanups
   end 

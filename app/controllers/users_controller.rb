@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
-    # GET /user/:user_id/cleanups
-    def index
-         
+    
+    def index   
     end
 
+    # GET /users/:id
     def show
         @cleanups = current_user.cleanups
     end

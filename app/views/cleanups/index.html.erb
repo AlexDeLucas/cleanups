@@ -1,1 +1,8 @@
 <h1>Cleanups By State</h1>
+
+<div>
+<% @cleanups.each do |cleanup| %>
+    <p><%= cleanup.title %></p>
+    <p><%= cleanup.state %></p>
+    <% end %>
+</div>

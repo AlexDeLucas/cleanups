@@ -1,1 +1,7 @@
 <h1>My Cleanups</h1>
+
+<div>
+<% @cleanups.each do |cleanup| %>
+    <p><%= cleanup.title %></p>
+    <% end %>
+</div>

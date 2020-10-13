@@ -14,7 +14,7 @@ class CleanupsController < ApplicationController
 
     # GET /cleanup/1
     def show
-        @cleanup = Cleanup.find(params[:id])
+        @cleanup = Cleanup.find(params[:id])   
     end 
 
     # POST

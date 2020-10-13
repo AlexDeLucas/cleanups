@@ -8,8 +8,6 @@ Rails.application.routes.draw do
       resources :cities
   end
   
-  resources :users do
-    resources :cleanups
-  end 
+  resources :users, :only => :show
 
 end

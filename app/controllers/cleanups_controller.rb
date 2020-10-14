@@ -24,11 +24,15 @@ class CleanupsController < ApplicationController
     # And it needs to accessible as a public show page
         @cleanup = Cleanup.new(cleanup_params)
         @cleanup.user = current_user
+        binding.pry
         if user_signed_in?
             @cleanup.save
             flash[:notice] = 'You logged a cleanup!'
             redirect_to @cleanup
         else 
+            flash[:alert] = 'Please fill out required fields--marked with *-- before submitting'
+            @state_collection = Cleanup::STATES
+            @cleanup_type_collection = Cleanup::CLEANUP_TYPES 
             render action: 'new'
         end
     end

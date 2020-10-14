@@ -40,7 +40,7 @@ feature 'user creates new cleanup', %Q{
       visit new_cleanup_path
 
       click_button 'Log Cleanup'
-      expect(page).to have_content('Please provide the following information before submitting: title, posted by, date, state, city, cleanup type, volunteers, total trash')
+      expect(page).to have_content('Please fill out required fields--marked with *-- before submitting')
       expect(page).to_not have_content('You logged a cleanup!')
     end
   end

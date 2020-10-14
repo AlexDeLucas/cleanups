@@ -5,6 +5,11 @@ class CleanupsController < ApplicationController
         @cleanups = Cleanup.all 
     end
 
+    # GET /cleanups/:id
+    def show
+        @cleanup = Cleanup.find(params[:id])   
+    end 
+
     # GET /cleanups/new
     def new
         @cleanup = Cleanup.new
@@ -12,18 +17,14 @@ class CleanupsController < ApplicationController
         @cleanup_type_collection = Cleanup::CLEANUP_TYPES 
     end
 
-    # GET /cleanup/1
-    def show
-        @cleanup = Cleanup.find(params[:id])   
-    end 
-
-    # POST
+    # POST /cleanups
     def create
     # Once this is created, it needs to be accessible at the user's "My Cleanups" page
     # But the data needs to be retrievable for the public page of cleanups organized by state
     # And it needs to accessible as a public show page
         @cleanup = Cleanup.new(cleanup_params)
         @cleanup.user = current_user
+        binding.pry
         if user_signed_in?
             @cleanup.save
             flash[:notice] = 'You logged a cleanup!'
@@ -46,6 +47,8 @@ class CleanupsController < ApplicationController
             :total_trash, 
             :description,
             :cleanup_photo
-        )
+        ).tap do |attr|
+            attr[:date] = Date.parse(attr[:date])
+        end
     end 
 end

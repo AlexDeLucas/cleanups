@@ -19,18 +19,13 @@ class CleanupsController < ApplicationController
 
     # POST /cleanups
     def create
-    # Once this is created, it needs to be accessible at the user's "My Cleanups" page
-    # But the data needs to be retrievable for the public page of cleanups organized by state
-    # And it needs to accessible as a public show page
         @cleanup = Cleanup.new(cleanup_params)
         @cleanup.user = current_user
-        binding.pry
-        if user_signed_in?
-            @cleanup.save
+        if @cleanup.save
             flash[:notice] = 'You logged a cleanup!'
             redirect_to @cleanup
         else 
-            flash[:alert] = 'Please fill out required fields--marked with *-- before submitting'
+            flash[:alert] = @cleanup.errors.full_messages.join(', ')
             @state_collection = Cleanup::STATES
             @cleanup_type_collection = Cleanup::CLEANUP_TYPES 
             render action: 'new'

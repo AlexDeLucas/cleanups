@@ -24,7 +24,6 @@ class CleanupsController < ApplicationController
     # And it needs to accessible as a public show page
         @cleanup = Cleanup.new(cleanup_params)
         @cleanup.user = current_user
-        binding.pry
         if user_signed_in?
             @cleanup.save
             flash[:notice] = 'You logged a cleanup!'
@@ -38,7 +37,8 @@ class CleanupsController < ApplicationController
     def cleanup_params
         params.require(:cleanup).permit(
             :user_id, 
-            :title, 
+            :title,
+            :date, 
             :posted_by, 
             :state, 
             :city, 
@@ -47,8 +47,6 @@ class CleanupsController < ApplicationController
             :total_trash, 
             :description,
             :cleanup_photo
-        ).tap do |attr|
-            attr[:date] = Date.parse(attr[:date])
-        end
+        )
     end 
 end

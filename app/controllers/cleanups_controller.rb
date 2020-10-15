@@ -32,6 +32,36 @@ class CleanupsController < ApplicationController
         end
     end
 
+    # EDIT /cleanups/:id/edit
+    def edit
+        @cleanup = Cleanup.find(params[:id])
+        @state_collection = Cleanup::STATES
+        @cleanup_type_collection = Cleanup::CLEANUP_TYPES
+    end
+
+    def update
+        @cleanup = Cleanup.find(params[:id])
+        @cleanup.update(cleanup_params)
+        if @cleanup.save
+            flash[:notice] = 'Changes saved'
+            redirect_to cleanup_path
+        else
+            flash[:alert] = @cleanup.errors.full_messages.join(', ')
+            @state_collection = Cleanup::STATES
+            @cleanup_type_collection = Cleanup::CLEANUP_TYPES 
+            render :edit 
+        end
+    end
+
+    # DELETE /cleanups/:id
+    def destroy
+        @cleanup = Cleanup.find(params[:id])
+        if @cleanup.destroy
+            flash[:notice] = "Cleanup Deleted"
+            redirect_to user_path
+        end
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleanup_params
         params.require(:cleanup).permit(

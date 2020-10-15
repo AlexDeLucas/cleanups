@@ -2,6 +2,6 @@
 
 <div>
 <% @cleanups.each do |cleanup| %>
-    <p><%= cleanup.title %></p>
+    <li><%= link_to cleanup.title, cleanup %></li>
     <% end %>
 </div>

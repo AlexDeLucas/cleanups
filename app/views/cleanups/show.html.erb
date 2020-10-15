@@ -15,4 +15,42 @@
 <%= @cleanup.date %>
 </p>
 
+<p>
+<strong>State:</strong>
+<%= @cleanup.state %>
+</p>
 
+<p>
+<strong>City:</strong>
+<%= @cleanup.city %>
+</p>
+
+<p>
+<strong>Cleanup Type:</strong>
+<%= @cleanup.cleanup_type %>
+</p>
+
+<p>
+<strong>Number of Volunteers:</strong>
+<%= @cleanup.volunteers %>
+</p>
+
+<p>
+<strong>Total Trash:</strong>
+<%= @cleanup.total_trash %>
+</p>
+
+<p>
+<strong>Description:</strong>
+<%= @cleanup.description %>
+</p>
+
+<div>
+    <p>
+    <%= link_to 'Home', root_path %> | 
+    <% if current_user == @cleanup.user %>
+        <%= link_to 'Edit Cleanup', edit_cleanup_path %> |
+        <%= link_to 'My Cleanups', user_path %>
+    </p>
+  <% end %>
+</div>

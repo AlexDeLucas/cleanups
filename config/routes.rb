@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'homes#index'
   devise_for :users
 
-  resources :cleanups do  
-    resources :states
+  resources :cleanups   
+  resources :states do
       resources :cities
   end
   

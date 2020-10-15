@@ -43,7 +43,7 @@ class CleanupsController < ApplicationController
         @cleanup = Cleanup.find(params[:id])
         @cleanup.update(cleanup_params)
         if @cleanup.save
-            flash[:notice] = 'Changes saved'
+            flash[:notice] = 'Changes Saved'
             redirect_to cleanup_path
         else
             flash[:alert] = @cleanup.errors.full_messages.join(', ')

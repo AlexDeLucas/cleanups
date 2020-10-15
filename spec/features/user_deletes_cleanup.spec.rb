@@ -13,7 +13,7 @@ feature 'user deletes cleanup', %Q{
       login_as(user, :scope => :user)
       visit cleanup_path(cleanup)
 
-      click_on 'Edit'
+      click_link 'Edit Cleanup'
       click_on 'Delete'
 
       expect(page).to have_content('Cleanup deleted')

@@ -2,7 +2,7 @@ FactoryBot.define do
     factory :cleanup do
       title { 'Lake Champlain Cleanup Social' }
       posted_by { 'Mary Bennett' }
-      date { '07/13/2020' }
+      date { '2020-07-13' }
       state { 'NY' }
       city { 'Essex' }
       cleanup_type { 'Coastal' }

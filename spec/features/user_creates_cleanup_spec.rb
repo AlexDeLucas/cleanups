@@ -12,12 +12,12 @@ feature 'user creates new cleanup', %Q{
       login_as(user, :scope => :user)
       visit new_cleanup_path
 
-      fill_in 'Title', with: 'Salem Cleanup Day 2020'
-      fill_in 'Posted By', with: 'Nate Hawthorne'
-      fill_in 'Date', with: '09/23/2020'
-      fill_in 'State', with: 'MA'
-      fill_in 'City', with: 'Salem'
-      fill_in 'Cleanup Type', with: 'Coastal'
+      fill_in 'Title*', with: 'Salem Cleanup Day 2020'
+      fill_in 'Posted By*', with: 'Nate Hawthorne'
+      fill_in 'Date*', with: '2020-09-23'
+      select 'Massachusetts', from: 'State*'
+      fill_in 'City*', with: 'Salem'
+      choose 'Coastal'
       fill_in 'Number of Volunteers', with: 1
       fill_in 'Total Trash (lbs.)', with: 4
       fill_in 'Description', with: 'Most common items were fishing line and glass bottles.'
@@ -26,7 +26,7 @@ feature 'user creates new cleanup', %Q{
       expect(page).to have_content('You logged a cleanup!')
       expect(page).to have_content('Salem Cleanup Day 2020')
       expect(page).to have_content('Nate Hawthorne')
-      expect(page).to have_content('09/23/2020')
+      expect(page).to have_content('2020-09-23')
       expect(page).to have_content('MA')
       expect(page).to have_content('Salem')
       expect(page).to have_content('Coastal')
@@ -40,7 +40,6 @@ feature 'user creates new cleanup', %Q{
       visit new_cleanup_path
 
       click_button 'Log Cleanup'
-      expect(page).to have_content('Please fill out required fields--marked with *-- before submitting')
       expect(page).to_not have_content('You logged a cleanup!')
     end
   end

@@ -1,9 +1,9 @@
 
-<h1><%= "Cleanups for the state of #{@state}" %></h1>
+<h1>Cleanups for the state of:</h1>
 
 
 <div>
 <% @cleanups.each do |cleanup| %>
-    <li><%= link_to cleanup.city, cleanup %></li>
+    <li><%= link_to cleanup.city %></li>
     <% end %>
 </div>

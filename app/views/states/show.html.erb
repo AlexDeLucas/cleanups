@@ -3,7 +3,7 @@
 
 <div>
  <% @cleanups.each do |cleanup| %>
-    <li><%= link_to cleanup %></li>
+    <li><%= link_to cleanup.city, state_city_path(params[:id], cleanup.city) %></li>
     <% end %>
 </div>
 

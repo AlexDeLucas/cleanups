@@ -47,6 +47,15 @@
     <%= f.text_area :description %>
 </div>
 
+<div class="field">
+<%= f.label :cleanup_photo, "Add a photo from your cleanup!" %><br />
+  <%= f.file_field :cleanup_photo %>
+  <% if f.object.cleanup_photo? %>
+  <%= image_tag f.object.cleanup_photo.thumb.url %>
+  <%= f.label :remove_cleanup_photo %> <%= f.check_box :remove_cleanup_photo %>
+  <% end %>
+</div>
+
 <div class="actions">
     <%= f.submit "Log Cleanup" %> |
     <%= link_to "Cancel", :back %>

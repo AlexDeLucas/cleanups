@@ -75,7 +75,8 @@ class CleanupsController < ApplicationController
             :volunteers,
             :total_trash, 
             :description,
-            :cleanup_photo
+            :cleanup_photo,
+            :remove_cleanup_photo
         )
     end 
 end

@@ -36,7 +36,7 @@
 </p>
 
 <p>
-<strong>Total Trash:</strong>
+<strong>Total Trash (lbs.):</strong>
 <%= @cleanup.total_trash %>
 </p>
 
@@ -45,10 +45,13 @@
 <%= @cleanup.description %>
 </p>
 
+<%= image_tag(@cleanup.cleanup_photo.thumb.url, alt: 'Image') if @cleanup.cleanup_photo? %>
+
+
 <div>
     <p>
     <%= link_to 'Home', root_path %> | 
-    <%= link_to "Back", :back %>
+    <%= link_to "Back", :back %> |
     <% if current_user == @cleanup.user %>
         <%= link_to 'Edit Cleanup', edit_cleanup_path %> |
         <%= link_to 'My Cleanups', user_path %>

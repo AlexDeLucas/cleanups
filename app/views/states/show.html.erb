@@ -2,8 +2,8 @@
 
 
 <div>
- <% @cleanups.each do |cleanup| %>
-    <li><%= link_to cleanup.city, state_city_path(params[:id], cleanup.city) %></li>
+ <% @cleanup_cities.each do |cleanup| %>
+    <li><%= link_to cleanup, state_city_path(params[:id], cleanup) %></li>
     <% end %>
 </div>
 

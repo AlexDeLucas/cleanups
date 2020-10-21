@@ -1,8 +1,26 @@
 <h1>Cleanups By State</h1>
 
-<div>
-<% @cleanups.each do |cleanup| %>
-    <p><%= cleanup.title %></p>
-    <p><%= cleanup.state %></p>
-    <% end %>
-</div>
+
+<div id="map" style="width: 300px; height: 300px;"></div>
+
+<%= javascript_include_tag('raphael.js') %>
+<% content_for :javascript do %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        # <script src="js/raphael.js"></script>
+        <script src="js/jquery.usmap.js"></script>
+        
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function() {
+            $('#map').usmap({}); 
+          });
+    </script>
+  <% end %>
+
+
+
+
+
+
+
+
+

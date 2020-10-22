@@ -1,20 +1,24 @@
 <h1>Cleanups By State</h1>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+<script src="https://cdn.rawgit.com/NewSignature/us-map/0677afad/jquery.usmap.js"></script>
+            
+<div id="map" style="width: 350px; height: 250px;"></div>
+<div id="clicked-state"></div>
 
-<div id="map" style="width: 300px; height: 300px;"></div>
+<script>
+    $(document).ready(function() {
+        $('#map').usmap({
+            stateStyles: {fill: 'blue'},
+              'click': function(event, data) {
+               $('#clicked-state').text('You clicked:'+data.name );
+          }
+        });
+        });
+  </script>  
 
-<%= javascript_include_tag 'raphael.js' %>
-<% content_for :javascript do %>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        # <script src="js/raphael.js"></script>
-        <script src="js/jquery.usmap.js"></script>
-        
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function() {
-            $('#map').usmap({}); 
-          });
-    </script>
-  <% end %>
 
 
 

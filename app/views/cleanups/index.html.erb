@@ -1,23 +1,34 @@
-<h1>Cleanups By State</h1>
+<html>
+  <h1>Cleanups By State</h1>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
-<script src="https://cdn.rawgit.com/NewSignature/us-map/0677afad/jquery.usmap.js"></script>
-            
-<div id="map" style="width: 350px; height: 250px;"></div>
-<div id="clicked-state"></div>
+  <head>
+    <title>JQVMap - World Map</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.usa.js" charset="utf-8"></script>
 
-<script>
-    $(document).ready(function() {
-        $('#map').usmap({
-            stateStyles: {fill: 'blue'},
-              'click': function(event, data) {
-               $('#clicked-state').text('You clicked:'+data.name );
-          }
-        });
-        });
-  </script>  
+    <%= content_for :javascript do %>
+    <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery('#vmap').vectorMap({ 
+          map: 'usa_en',
+          backgroundColor: null,
+          color: '#ffffff',
+          enableZoom: true,
+          showTooltip: true,
+          selectedColor: null,
+          hoverColor: '#2980b9'
+          });
+    });
+    </script>
+    <% end %>
+  </head>
+  
+  <body>
+    <div id="vmap" style="width: 600px; height: 400px;"></div>
+  </body>
+</html>
 
 
 

@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require raphael
-//= //= require foundation
+//= require foundation
 // require_tree .
 
 $(function(){ $(document).foundation(); });

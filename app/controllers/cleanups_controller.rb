@@ -3,6 +3,7 @@ class CleanupsController < ApplicationController
     # GET /cleanups
     def index
         @cleanups = Cleanup.all 
+        @cleanups_by_state = Cleanup.where(state:params[:id]) 
     end
 
     # GET /cleanups/:id

@@ -1,29 +1,16 @@
-
-
-  <body>
+<body>
     <h1>Cleanups By State</h1>
-    <div id="vmap" style="width: 600px; height: 400px;"></div>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css" media="screen" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/maps/jquery.vmap.usa.js" charset="utf-8"></script>
-
-    <script type="text/javascript">
-    jQuery(document).ready(function() {
-      jQuery('#vmap').vectorMap({ 
-          map: 'usa_en',
-          backgroundColor: null,
-          color: '#ffffff',
-          enableZoom: true,
-          showTooltip: true,
-          selectedColor: null,
-          hoverColor: '#2980b9'
-          });
-    });
-    </script>
-
-  </body>
+    <%= form_for(@cleanups) do |f| %> 
+    <div class="field">
+        <%= f.label :state, "State*" %><br />
+        <%= f.select(:state, @state_collection) %>
+    </div>
+    
+    <div class="actions">
+        <%= f.submit "View Cleanups" %> |
+    </div>
+    <% end %>
+</body>
 
 
 

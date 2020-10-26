@@ -1,9 +1,10 @@
 <body>
     <h1>Cleanups By State</h1>
-    
+
     # The user sees a dropdown menu of U.S. states
-    <%= form_for(@cleanup) do |f| %> 
+   
     <div class="field">
+    <%= form_for :state do |f| %>
         <%= f.label :state, "State*" %><br />
         <%= f.select(:state, @state_collection) %>
     </div>
@@ -11,6 +12,7 @@
     # When the user selects and submits a state, they are taken to the show page for that state
     <div class="actions">
         <%= f.submit "View Cleanups" %> 
+        <%= redirect_to state_path %>
     </div>
     <% end %>
 </body>

@@ -3,7 +3,12 @@ class CleanupsController < ApplicationController
     # GET /cleanups
     def index
         @cleanups = Cleanup.all 
-        @cleanups_by_state = Cleanup.where(state:params[:id]) 
+        @state_collection = Cleanup::STATES
+        @cleanup = Cleanup.new
+        @state_name = params[:id]
+        if @state_name.select
+            redirect_to state_path
+        end
     end
 
     # GET /cleanups/:id

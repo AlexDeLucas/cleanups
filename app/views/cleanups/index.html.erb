@@ -1,13 +1,13 @@
 <body>
     <h1>Cleanups By State</h1>
-    <%= form_for(@cleanups) do |f| %> 
+    <%= form_for(@cleanup) do |f| %> 
     <div class="field">
         <%= f.label :state, "State*" %><br />
         <%= f.select(:state, @state_collection) %>
     </div>
     
     <div class="actions">
-        <%= f.submit "View Cleanups" %> |
+        <%= f.submit "View Cleanups" %> 
     </div>
     <% end %>
 </body>

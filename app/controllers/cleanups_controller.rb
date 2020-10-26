@@ -6,6 +6,8 @@ class CleanupsController < ApplicationController
         @state_collection = Cleanup::STATES
         @cleanup = Cleanup.new
         @state_name = params[:id]
+        
+        # When the user selects a state, they are taken to the show page for that state
         if @state_name.select
             redirect_to state_path
         end

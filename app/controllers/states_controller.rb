@@ -10,11 +10,3 @@ class StatesController < ApplicationController
         
     end
 end
-
-
-        # @cleanups = Cleanup.group('cleanups.id').where(state: params[:id]).group("city")
-        # @cleanups = Cleanup.group('cleanups.id').where(state: params[:id]).order("city")
-        # @cleanups = Cleanup.where(state: params[:id]).group("city")
-        # @cleanups_by_city = @cleanups.group_by(&:city)
-
-        # @uniq_cities = @cleanups_by_city.uniq

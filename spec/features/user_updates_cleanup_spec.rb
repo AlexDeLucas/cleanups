@@ -9,24 +9,23 @@ feature 'user updates cleanup', %Q{
     let(:user) { FactoryBot.create(:user) }
     let!(:cleanup_2) { FactoryBot.create(:cleanup, user: user) }
 
-    scenario 'updates outdoor adventure' do
-        login_as(user, :scope => :user)
-        visit cleanup_path(cleanup_2)
-        click_on 'Edit'
+    scenario 'update cleanup' do
+      login_as(user, :scope => :user)
+      visit cleanup_path(cleanup_2)
+      click_link 'Edit Cleanup'
     
-    fill_in 'Posted By', with: 'Mr. Collins'
-    fill_in 'State', with: 'NY'
-    fill_in 'City', with: 'Port Kent'
-    fill_in 'Total Trash Collected', with: 16
-    fill_in 'Description', with: 'We cleaned up a lot of litter!'
-    click_button 'Save Changes'
+      fill_in 'Posted By*', with: 'Mr. Collins'
+      fill_in 'City*', with: 'Port Kent'
+      fill_in 'Total Trash (lbs.)*', with: 16
+      fill_in 'Description', with: 'We cleaned up a lot of litter!'
+      click_button 'Log Cleanup'
 
-    expect(page).to have_content('Cleanup successfully updated!')
-    expect(page).to have_content('Mr. Collins')
-    expect(page).to have_content('NY')
-    expect(page).to have_content('Port Kent')
-    expect(page).to have_content(16)
-    expect(page).to have_content('We cleaned up a lot of litter!')
-
+      expect(page).to have_content('Changes Saved')
+      expect(page).to have_content('Mr. Collins')
+      expect(page).to have_content('NY')
+      expect(page).to have_content('Port Kent')
+      expect(page).to have_content(16)
+      expect(page).to have_content('We cleaned up a lot of litter!')
+      expect(page).to_not have_content('Mary Bennett')
     end
-end
+  end

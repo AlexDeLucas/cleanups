@@ -4,11 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  # Is this email validation necessary? Maybe just the role validation? Does Devise take care of the rest?
+  # validates :email, uniqueness: true
+  validates :role, inclusion: { in: ['user', 'admin'] }       
   has_many :cleanups 
-
-  validates :email, uniqueness: true
-  validates :encrypted_password, presence: true
-  validates :role, inclusion: { in: ['user', 'admin'] }
 
   def is_admin?
     role == 'admin'

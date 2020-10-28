@@ -1,0 +1,15 @@
+<h1><%= "Cleanups for: #{@state_name}" %></h1>
+
+
+<div>
+ <% @cleanup_cities.each do |cleanup| %>
+    <li><%= link_to cleanup, state_city_path(params[:id], cleanup) %></li>
+    <% end %>
+</div>
+
+<div>
+    <p>
+        <%= link_to 'Home', root_path %> |
+        <%= link_to 'Back', cleanups_path %> 
+    </p>
+</div>

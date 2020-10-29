@@ -7,11 +7,12 @@ feature 'user views cleanup list for specific state', %Q{
 } do
 
     let(:user) { FactoryBot.create(:user) }
-    let!(:cleanup_1) { FactoryBot.create(:cleanup) }
+    let!(:cleanup_1) { FactoryBot.create(:cleanup, user: user) }
 
     scenario 'unauthenticated user sees cleanup cities for specific state' do
         visit cleanups_path
         click_link 'New York'
+
 
         expect(page).to have_content('Cleanups for: NY')
         expect(page).to have_content('Essex')
@@ -20,6 +21,7 @@ feature 'user views cleanup list for specific state', %Q{
 
     scenario 'authenticated user sees cleanup cities for specific state' do
         login_as(user, :scope => :user)
+        visit cleanups_path
         click_link 'New York'
         
         expect(page).to have_content('Cleanups for: NY')

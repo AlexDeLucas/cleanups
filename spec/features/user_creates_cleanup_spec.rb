@@ -18,8 +18,8 @@ feature 'user creates new cleanup', %Q{
       select 'Massachusetts', from: 'State*'
       fill_in 'City*', with: 'Salem'
       choose 'Coastal'
-      fill_in 'Number of Volunteers', with: 1
-      fill_in 'Total Trash (lbs.)', with: 4
+      fill_in 'Number of Volunteers*', with: 1
+      fill_in 'Total Trash (lbs.)*', with: 4
       fill_in 'Description', with: 'Most common items were fishing line and glass bottles.'
       click_button 'Log Cleanup'
 

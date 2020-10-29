@@ -5,6 +5,7 @@ feature 'user signs in', %Q{
   I want to sign in
   So that I can regain access to my account
 } do
+  
   scenario 'specify valid credentials' do
     user = FactoryBot.create(:user)
 
@@ -15,7 +16,7 @@ feature 'user signs in', %Q{
 
     click_button 'Log in'
 
-    expect(page).to have_content('Signed in successfully')
+    expect(page).to have_content('Signed in successfully.')
     expect(page).to have_content('Sign Out')
   end
 

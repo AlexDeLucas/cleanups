@@ -14,7 +14,9 @@ feature 'user creates new cleanup', %Q{
 
       fill_in 'Title*', with: 'Salem Cleanup Day 2020'
       fill_in 'Posted By*', with: 'Nate Hawthorne'
-      fill_in 'Date*', with: '2020-09-23'
+      select '2020', :from => 'cleanup[date(1i)]'
+      select 'September', :from => 'cleanup[date(2i)]'
+      select '23', :from => 'cleanup[date(3i)]'
       select 'Massachusetts', from: 'State*'
       fill_in 'City*', with: 'Salem'
       choose 'Coastal'
@@ -29,7 +31,7 @@ feature 'user creates new cleanup', %Q{
       expect(page).to have_content('2020-09-23')
       expect(page).to have_content('MA')
       expect(page).to have_content('Salem')
-      expect(page).to have_content('Coastal')
+      expect(page).to have_content('coastal')
       expect(page).to have_content(1)
       expect(page).to have_content(4)
       expect(page).to have_content('Most common items were fishing line and glass bottles.')

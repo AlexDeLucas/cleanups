@@ -21,7 +21,7 @@ feature 'user updates account', %Q{
     
     fill_in 'Password', with: 'passwordy'
     fill_in 'Password confirmation', with: 'passwordy'
-    fill_in 'Current password', with: 'Earth1234'
+    fill_in 'Current password', with: user.password
     click_button 'Update'
 
     expect(page).to have_content('Your account has been updated successfully.')

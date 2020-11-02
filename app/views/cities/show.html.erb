@@ -1,3 +1,12 @@
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li><%= link_to "Home", root_path %></li> 
+    <li><%= link_to "View Cleanups", cleanups_path %></li>
+    <li><%= link_to "State", state_path(params[:state_id]) %></li>
+    <li><span class="show-for-sr">Current: </span>City</li>
+  </ul>
+</nav>
+
 <h1><%= "Cleanups for: #{@city_name}" %></h1>
 
 <div>
@@ -6,9 +15,12 @@
     <% end %>
 </div>
 
-<div>
-    <p>
-        <%= link_to 'Home', root_path %> |
-        <%= link_to 'Back', state_path(params[:state_id]) %> 
-    </p>
-</div>
+
+
+<nav class="bottom-bar">
+    <div class="bottom-bar-left">
+      <ul class="menu">  
+      <%= link_to 'Back', state_path(params[:state_id]) %> 
+      </ul>
+    </div>
+</nav>

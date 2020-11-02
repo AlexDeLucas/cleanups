@@ -10,6 +10,15 @@
   
   <nav class="top-bar">
     <h1><a href="/">Cleanups</a></h1>
+    <div class="top-bar-left">
+      <ul class="menu">  
+      <%= link_to "View Cleanups", cleanups_path %> 
+      <%= link_to "Log A Cleanup", new_cleanup_path %> 
+      <%- if current_user -%>
+      <%= link_to "My Cleanups", user_path(current_user) %>
+      <%- end -%>
+      </ul>
+    </div>
 
     <section class="top-bar-section">
       <ul class="right">
@@ -24,20 +33,15 @@
     </section>
   </nav>
 
-  <%= link_to "Home", root_path %> | 
-  <%= link_to "View Cleanups", cleanups_path %> |
-  <%= link_to "Log A Cleanup", new_cleanup_path %> |
-  <%- if current_user -%>
-  <%= link_to "My Cleanups", user_path(current_user) %>
-  <%- end -%>
-
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
     </div>
   <%- end -%>
 
+  <div class="grid-container">
   <%= yield %>
+  </div>
 
   <%= javascript_include_tag 'application' %>
   

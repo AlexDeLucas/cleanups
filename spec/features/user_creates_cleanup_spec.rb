@@ -28,7 +28,7 @@ feature 'user creates new cleanup', %Q{
       expect(page).to have_content('You logged a cleanup!')
       expect(page).to have_content('Salem Cleanup Day 2020')
       expect(page).to have_content('Nate Hawthorne')
-      expect(page).to have_content('2020-09-23')
+      expect(page).to have_content('09-23-2020')
       expect(page).to have_content('MA')
       expect(page).to have_content('Salem')
       expect(page).to have_content('coastal')

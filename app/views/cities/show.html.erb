@@ -7,11 +7,16 @@
   </ul>
 </nav>
 
-<h1><%= "Cleanups for: #{@city_name}" %></h1>
+<h1><%= "Cleanups By City: #{@city_name}" %></h1>
+<h3>Looking for a specific cleanup? Locate it here, organized by date.</h3>
 
 <div>
 <% @cleanups.each do |cleanup| %>
-    <li><%= link_to cleanup.title, cleanup %></li>
+    <li>
+    <%= link_to cleanup.title, cleanup %> |
+    <%= cleanup.date.strftime("%m-%d-%Y") %>
+    </li>
+
     <% end %>
 </div>
 

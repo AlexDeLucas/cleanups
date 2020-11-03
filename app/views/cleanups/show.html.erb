@@ -10,53 +10,66 @@
 
 <h1>Cleanup Log</h1>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @cleanup.title %>
-  </p>
+<div class="callout secondary">
+  <h5><%= @cleanup.title %></h5>
+</div>
 
-  <p>
-    <strong>Posted By:</strong>
-    <%= @cleanup.posted_by %>
-  </p>
+  <table class= "hover">
+  <thead>
+    <tr>
+      <th width="200"></th>
+      <th></th>   
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Date</strong></td> 
+      <td><%= @cleanup.date.strftime("%m-%d-%Y") %></td>
+    </tr>
+    <tr>
+      <td><strong>Posted By</strong></td> 
+      <td><%= @cleanup.posted_by %></td>
+    </tr>     
+    <tr>
+      <td><strong>City</strong></td> 
+      <td><%= @cleanup.city %></td>
+    </tr> 
+    <tr>
+      <td><strong>State</strong></td> 
+      <td><%= @cleanup.state %></td>
+    </tr>
+    <tr>
+      <td><strong>Cleanup Type</strong></td> 
+      <td><%= @cleanup.cleanup_type %></td>
+    </tr> 
+    <tr>
+      <td><strong>Number of Volunteers</strong></td> 
+      <td><%= @cleanup.volunteers %></td>
+    </tr> 
+    <tr>
+      <td><strong>Total Trash (lbs.)</strong></td> 
+      <td><%= @cleanup.total_trash %></td>
+    </tr> 
+    <tr>
+      <td><strong>Description</strong></td> 
+      <td><%= @cleanup.description %></td>
+    </tr>    
+  </tbody>
+</table>
 
-  <p>
-    <strong>Date:</strong>
-    <%= @cleanup.date.strftime("%m-%d-%Y") %>
-  </p>
+<div class="grid-container">
+  <div class="grid-x grid-margin-x small-up-2 medium-up-4">
+    
+    <div class="cell">
+      <div class="card">
+        <div class="card-section">
+        <%= image_tag(@cleanup.cleanup_photo.thumb.url, alt: 'Image') if @cleanup.cleanup_photo? %>
+        </div>
+      </div>
+    </div>
 
-  <p>
-    <strong>State:</strong>
-    <%= @cleanup.state %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= @cleanup.city %>
-  </p>
-
-  <p>
-    <strong>Cleanup Type:</strong>
-    <%= @cleanup.cleanup_type %>
-  </p>
-
-  <p>
-    <strong>Number of Volunteers:</strong>
-    <%= @cleanup.volunteers %>
-  </p>
-
-  <p>
-    <strong>Total Trash (lbs.):</strong>
-    <%= @cleanup.total_trash %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @cleanup.description %>
-  </p>
-
-  <%= image_tag(@cleanup.cleanup_photo.thumb.url, alt: 'Image') if @cleanup.cleanup_photo? %>
-
+  </div>
+</div>
 
 <nav class="bottom-bar">
     <div class="bottom-bar-left">

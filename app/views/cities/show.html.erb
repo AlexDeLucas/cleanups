@@ -10,16 +10,23 @@
 <h1><%= "Cleanups By City: #{@city_name}" %></h1>
 <h3>Looking for a specific cleanup? Locate it here, organized by date.</h3>
 
-<div>
-<% @cleanups.each do |cleanup| %>
-    <li>
-    <%= link_to cleanup.title, cleanup %> |
-    <%= cleanup.date.strftime("%m-%d-%Y") %>
-    </li>
-
+<table class= "hover">
+  <thead>
+    <tr>
+      <th width="200">Date</th>
+      <th>Cleanup Event</th>   
+    </tr>
+  </thead>
+  <tbody>
+  <div>
+  <% @cleanups.each do |cleanup| %>
+    <tr>
+      <td><%= cleanup.date.strftime("%m-%d-%Y") %></td> 
+      <td><%= link_to cleanup.title, cleanup %></td>
+    </tr>   
     <% end %>
-</div>
-
+  </tbody>
+</table>
 
 
 <nav class="bottom-bar">

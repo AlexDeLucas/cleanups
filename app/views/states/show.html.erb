@@ -7,13 +7,22 @@
 </nav>
 
 <h1><%= "Cleanups By State/Territory: #{@state_name}" %></h1>
+<h3>Locations where cleanups have been logged will be linked below.</h3>
 
-
-<div>
- <% @cleanup_cities.each do |cleanup| %>
-    <li><%= link_to cleanup, state_city_path(params[:id], cleanup) %></li>
-    <% end %>
-</div>
+<table class= "hover">
+  <thead>
+    <tr>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div>
+      <% @cleanup_cities.each do |cleanup| %>
+      <tr><td><%= link_to cleanup, state_city_path(params[:id], cleanup) %></td></tr>
+      <% end %>
+    </div>
+  </tbody>
+</table>
 
 <nav class="bottom-bar">
     <div class="bottom-bar-left">

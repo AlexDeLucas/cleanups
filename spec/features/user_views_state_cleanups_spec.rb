@@ -14,7 +14,7 @@ feature 'user views cleanup list for specific state', %Q{
         click_link 'New York'
 
 
-        expect(page).to have_content('Cleanups for: NY')
+        expect(page).to have_content('Cleanups By State/Territory: NY')
         expect(page).to have_content('Essex')
         expect(page).to have_content('Back')
     end 
@@ -24,7 +24,7 @@ feature 'user views cleanup list for specific state', %Q{
         visit cleanups_path
         click_link 'New York'
         
-        expect(page).to have_content('Cleanups for: NY')
+        expect(page).to have_content('Cleanups By State/Territory: NY')
         expect(page).to have_content('Essex')
         expect(page).to have_content('Back')
         expect(page).to have_content('My Cleanups')

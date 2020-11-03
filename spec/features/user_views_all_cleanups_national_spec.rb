@@ -10,9 +10,9 @@ feature 'user views national list for cleanups', %Q{
 
     scenario 'unauthenticated user visits View Cleanups and see links for all U.S. states and territories' do
         visit root_path
-        click_link 'View Cleanups'
+        first(:link, 'View Cleanups').click 
 
-        expect(page).to have_content('Cleanups By State')
+        expect(page).to have_content('View Cleanups')
         expect(page).to have_content('Mid Atlantic')
         expect(page).to have_content('Iowa')
         expect(page).to have_content('Montana')
@@ -21,9 +21,9 @@ feature 'user views national list for cleanups', %Q{
     scenario 'authenticated user visits View Cleanups and see links for all U.S. states and territories' do
         login_as(user, :scope => :user)
         visit root_path
-        click_link 'View Cleanups'
+        first(:link, 'View Cleanups').click 
 
-        expect(page).to have_content('Cleanups By State')
+        expect(page).to have_content('View Cleanups')
         expect(page).to have_content('Mid Atlantic')
         expect(page).to have_content('Iowa')
         expect(page).to have_content('Montana')

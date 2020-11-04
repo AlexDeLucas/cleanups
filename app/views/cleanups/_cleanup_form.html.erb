@@ -52,11 +52,9 @@
     <%= f.label :cleanup_photo, "Upload File", class: 'button' %>
     <%= f.file_field :cleanup_photo, class: 'show-for-sr' %>
   
-    <% if f.object.cleanup_photo? %>
-    <%= image_tag f.object.cleanup_photo.thumb.url %>
+    <%= image_tag(f.object.cleanup_photo.thumb) if f.object.cleanup_photo?  %>
     <%= f.label :remove_cleanup_photo %> 
     <%= f.check_box :remove_cleanup_photo %>
-    <% end %>
 </div>
 
 <div class="actions">

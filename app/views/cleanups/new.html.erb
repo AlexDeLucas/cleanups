@@ -2,7 +2,10 @@
 
 <div>
   <% if user_signed_in? %>
-        <%= render 'cleanup_form' %>
+      <%= render 'cleanup_form' %>
+        <div class="actions">
+        <%= link_to "Cancel", :back, class: 'button' %>
+        </div>
     <% else %>
         <p><%= 'Interested in logging a cleanup? Excellent! Please sign in, or sign up for a new account--it\'s free!' %></p>
   <% end %>

@@ -6,4 +6,12 @@
 </div>
 
 <%= render 'cleanup_form', cleanup: @cleanup %>
-<%= button_to "Delete Cleanup", @cleanup, :class => "button", :method => :delete %>
+
+<div class="actions">
+<%= link_to "Cancel", :back, class: 'button' %>
+<%= link_to "Delete Cleanup", @cleanup, :class => "alert button", :method => :delete %>
+</div>
+
+
+
+

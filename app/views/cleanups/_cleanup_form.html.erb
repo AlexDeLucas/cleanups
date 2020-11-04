@@ -1,6 +1,6 @@
 <h3>Please use the form below to log your cleanup. Fields marked with * are required.</h3>
 
-<%= form_for(@cleanup) do |f| %>
+<%= form_for @cleanup, :html => {:multipart => true} do |f| %>
 
 <div class="field">
     <%= f.label :title, "Title*" %><br />
@@ -47,19 +47,22 @@
     <%= f.text_area :description %>
 </div>
 
+<div class="callout">
 <div class="field">
-    <p>Add photos from your cleanup! Click to upload an image file:</p>
-    <%= f.label :cleanup_photo, "Upload File", class: 'button' %>
-    <%= f.file_field :cleanup_photo, class: 'show-for-sr' %>
-  
-    <%= image_tag(f.object.cleanup_photo.thumb) if f.object.cleanup_photo?  %>
+    <p>Add photos from your cleanup (optional):</p>
+    <%= f.file_field :cleanup_photo %>
+  </div>
+  <div class="field">
+    <% if f.object.cleanup_photo? %>
+    <%= image_tag f.object.cleanup_photo.thumb.url %>
     <%= f.label :remove_cleanup_photo %> 
     <%= f.check_box :remove_cleanup_photo %>
+    <% end %>
+</div>
 </div>
 
 <div class="actions">
     <%= f.submit "Log Cleanup", class: 'button success' %>
-    <%= link_to "Cancel", :back, class: 'button' %>
 </div>
 
 <% end %>

@@ -6,6 +6,7 @@ class StatesController < ApplicationController
         @cleanups = Cleanup.where(state: params[:id])
         # Find all the cities w/ cleanups in the state
         @cleanup_cities = @cleanups.map(&:city).uniq.sort_by { |cleanup_cities| cleanup_cities}
-        @state_name = params[:id]        
+        @state_name = params[:id]
+        @state_trash = @cleanups.sum(:total_trash)       
     end
 end

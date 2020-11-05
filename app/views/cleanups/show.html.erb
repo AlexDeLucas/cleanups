@@ -74,8 +74,8 @@
 <nav class="bottom-bar">
     <div class="bottom-bar-left">
       <ul class="menu">  
-      <%= link_to "Back", state_city_path(@cleanup.state, @cleanup.city) %> 
       <% if current_user == @cleanup.user %>
+      <%= link_to 'My Cleanups', user_path %>
       <%= link_to 'Edit Cleanup', edit_cleanup_path %> 
       <% end %>
       </ul>

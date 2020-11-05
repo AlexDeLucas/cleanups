@@ -1,8 +1,23 @@
 <h1>My Cleanups</h1>
 
-<div>
-<% @cleanups.each do |cleanup| %>
-    <li><%= link_to cleanup.title, cleanup %></li>
+
+<table class= "hover">
+  <thead>
+    <tr>
+      <th width="200">Date</th>
+      <th>Cleanup Event</th>   
+    </tr>
+  </thead>
+  <tbody>
+  <% @cleanups.each do |cleanup| %>
+    <tr>
+      <td><%= cleanup.date.strftime("%m-%d-%Y") %></td> 
+      <td><%= link_to cleanup.title, cleanup %></td>
+    </tr>   
     <% end %>
-</div>
+  </tbody>
+</table>
+
+
+
 

@@ -1,12 +1,22 @@
+<div class="text-center">
 <h1>Log A Cleanup</h1>
+</div>
 
 <div>
   <% if user_signed_in? %>
       <%= render 'cleanup_form' %>
-        <div class="actions">
+      <div class="actions">
         <%= link_to "Cancel", :back, class: 'button' %>
-        </div>
+      </div>
     <% else %>
-        <p><%= 'Interested in logging a cleanup? Excellent! Please sign in, or sign up for a new account--it\'s free!' %></p>
-  <% end %>
+      <div class="text-center">
+        <h3><%= 'Interested in logging a cleanup? Excellent! Please sign in, or sign up for a new account--it\'s free!' %></h3>
+      </div>
+      <div class="callout secondary cell small-12 medium-4">
+        <h3>I'm a returning user... <%= link_to "Sign In", new_user_session_path %></h3>
+      </div>
+      <div class="callout secondary cell small-12 medium-4">
+        <h3>I'm a new user... <%= link_to "Sign Up", new_user_registration_path %></h3>
+      </div>
+    <% end %>
 </div>

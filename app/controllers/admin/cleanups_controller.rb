@@ -1,7 +1,7 @@
 class Admin::CleanupsController < ApplicationController
     before_action :ensure_admin_user!
     def index
-        @cleanups = Cleanup.all  
+        @cleanups = Cleanup.all.order(:posted_by)
     end
 
     def destroy

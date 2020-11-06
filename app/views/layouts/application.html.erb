@@ -13,7 +13,7 @@
     <div class="top-bar-left">
       <ul class="menu">  
       <%= link_to "View Cleanups", cleanups_path %> 
-      <%= link_to "Log A Cleanup", new_cleanup_path %> 
+      <%= link_to "Log A Cleanup", new_cleanup_path %>
       <%- if current_user -%>
       <%= link_to "My Cleanups", user_path(current_user) %>
       <%- end -%>
@@ -22,7 +22,7 @@
 
     <section class="top-bar-section">
       <ul class="right">
-      <ul class="menu"> 
+      <ul class="menu">
         <%- if current_user -%> 
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <li><%= link_to 'Edit Account', edit_user_registration_path %></li>

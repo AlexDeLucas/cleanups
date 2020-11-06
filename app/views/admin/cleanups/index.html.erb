@@ -1,0 +1,15 @@
+<h1>List of Cleanups</h1>
+
+<ul>
+  <% @cleanups.each do |cleanup| %>
+  <li>
+    <%= cleanup.posted_by %>
+    <%= link_to cleanup.title, cleanup %>
+    <%=
+       link_to "Delete",
+       admin_cleanup_path(cleanup),
+       method: :delete
+    %>
+  </li>
+  <% end %>
+</ul>

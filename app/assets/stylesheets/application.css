@@ -28,3 +28,11 @@
     background: #000;
     float: right
   }
+
+  .sky_blue_text {
+    color: #7CDBD5;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mako&display=swap');
+

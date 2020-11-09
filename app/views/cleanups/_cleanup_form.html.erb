@@ -63,11 +63,8 @@
 
 <div class="actions">
 <div class="text-center">
-    <%= f.submit "Log Cleanup", class: 'button success' %>
-    <%= link_to "Cancel", :back, class: 'button' %> 
-    <% if current_page?(controller: 'cleanups', action: 'edit') %>
-        <%= link_to "Delete Cleanup", @cleanup, :class => "alert button", :method => :delete %>
-    <% end %>  
+    <%= f.submit "Log Cleanup", class: 'button sky' %>
+    <%= link_to "Cancel", :back, class: 'button' %>    
 </div>
 </div>
 

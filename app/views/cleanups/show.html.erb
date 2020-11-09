@@ -17,41 +17,32 @@
   <table class= "hover">
   <thead>
     <tr>
-      <th width="200"></th>
-      <th></th>   
+      <th width="125">Date</th>
+      <th width="125">Posted By</th>
+      <th width="125">City</th> 
+      <th width="75">State</th> 
+      <th width="100">Cleanup Type</th> 
+      <th width="100">Total Volunteers</th> 
+      <th width="100">Total Trash (lbs.)</th> 
+      <th>Description</th>    
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Date</strong></td> 
       <td><%= @cleanup.date.strftime("%m-%d-%Y") %></td>
-    </tr>
-    <tr>
-      <td><strong>Posted By</strong></td> 
+
       <td><%= @cleanup.posted_by %></td>
-    </tr>     
-    <tr>
-      <td><strong>City</strong></td> 
+   
       <td><%= @cleanup.city %></td>
-    </tr> 
-    <tr>
-      <td><strong>State</strong></td> 
+ 
       <td><%= @cleanup.state %></td>
-    </tr>
-    <tr>
-      <td><strong>Cleanup Type</strong></td> 
+  
       <td><%= @cleanup.cleanup_type %></td>
-    </tr> 
-    <tr>
-      <td><strong>Number of Volunteers</strong></td> 
+   
       <td><%= @cleanup.volunteers %></td>
-    </tr> 
-    <tr>
-      <td><strong>Total Trash (lbs.)</strong></td> 
+   
       <td><%= @cleanup.total_trash %></td>
-    </tr> 
-    <tr>
-      <td><strong>Description</strong></td> 
+   
       <td><%= @cleanup.description %></td>
     </tr>    
   </tbody>

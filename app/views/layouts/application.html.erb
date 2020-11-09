@@ -13,13 +13,13 @@
       <a href="/" style="color: #FEFEFE">Cleanups</a>
     </h1>
     <div class="top-bar-left">
-      <ul class="menu">  
+      <ul class="menu">
+      <%- if current_user -%>
+        <%= link_to "My Cleanups", user_path(current_user), {:style=>'color:#FEFEFE;'} %>
+      <%- end -%>  
       <%= link_to "View Cleanups", cleanups_path, {:style=>'color:#FEFEFE;'} %> 
       <%= link_to "Log A Cleanup", new_cleanup_path, {:style=>'color:#FEFEFE;'} %>
       <%= link_to "About", details_path, {:style=>'color:#FEFEFE;'} %>
-      <%- if current_user -%>
-      <%= link_to "My Cleanups", user_path(current_user), {:style=>'color:#FEFEFE;'} %>
-      <%- end -%>
       </ul>
     </div>
 
@@ -29,6 +29,7 @@
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, :style=>'color:#FEFEFE;' %></li>
           <li><%= link_to 'Edit Account', edit_user_registration_path, {:style=>'color:#FEFEFE;'} %></li>
+          <li><%= link_to "Admin", admin_users_path, {:style=>'color:#FEFEFE;'} if current_user.is_admin? %><li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path, {:style=>'color:#FEFEFE;'} %></li>
           <li><%= link_to 'Sign In', new_user_session_path, {:style=>'color:#FEFEFE;'} %></li>

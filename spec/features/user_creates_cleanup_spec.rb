@@ -22,7 +22,7 @@ feature 'user creates new cleanup', %Q{
       choose 'Coastal'
       fill_in 'Number of Volunteers*', with: 1
       fill_in 'Total Trash (lbs.)*', with: 4
-      fill_in 'Description', with: 'Most common items were fishing line and glass bottles.'
+      fill_in 'Description (optional)', with: 'Most common items were fishing line and glass bottles.'
       click_button 'Log Cleanup'
 
       expect(page).to have_content('You logged a cleanup!')

@@ -17,7 +17,7 @@ feature 'user updates cleanup', %Q{
       fill_in 'City*', with: 'Port Kent'
       choose 'Coastal'
       fill_in 'Total Trash (lbs.)*', with: 16
-      fill_in 'Description', with: 'We cleaned up a lot of litter.'
+      fill_in 'Description (optional)', with: 'We cleaned up a lot of litter.'
       click_button 'Log Cleanup'
 
       expect(page).to have_content('Changes Saved')

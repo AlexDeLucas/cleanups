@@ -38,7 +38,7 @@ To generate a new Rails application using `make_it_so`:
 
 # TODO
 
-* Build a community cleanups event dashboard, a virtual space where users can plan future cleanups or post information about upcoming cleanup events that have already been established.
+* Build a community cleanups event dashboard, a virtual space where users can plan future cleanups or post information about established upcoming cleanup events.
 * Modify the UI of the cleanups#index views page by replacing the list of states and territories with an interactive map infographic.
 * Make improvements to the color scheme and other UI design elements.      
 

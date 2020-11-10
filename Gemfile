@@ -27,7 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
- 
 end
 
 group :development do

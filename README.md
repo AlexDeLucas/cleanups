@@ -11,7 +11,7 @@ Before using Cleanups you will need:
 
 # Configuration
 
-?????
+??
 
 # Installation 
 
@@ -25,16 +25,18 @@ To generate a new Rails application using `make_it_so`:
 
 # Usage
 
-??????
+??
 
 # Development
 
-?????
+For checking email in development, mailcatcher is used. To get started, run `gem install mailcatcher` and then `mailcatcher` to start the server. Please refer to the [mailcatcher documentation](https://mailcatcher.me) for more information.
+
+??
 
 # Other Stuff? Generated automatically, not sure if I need this...
-* Database initialization
+* Database initialization ?
 
-* Deployment instructions
+* Deployment instructions ?
 
 # TODO
 

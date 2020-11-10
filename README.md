@@ -9,34 +9,34 @@ Before using Cleanups you will need:
 * The Ruby language (version 2.6.5p114)
 * Rails (version 5.2.4.4)
 
-# Configuration
-
-??
-
 # Installation 
 
-It is recommended that you use the [make_it_so gem](https://github.com/LaunchAcademy/make_it_so) for setting up this project.
+The [make_it_so gem](https://github.com/LaunchAcademy/make_it_so) was used for setting up this project.
 
-To generate a new Rails application using `make_it_so`:
+To clone this repository and cd into it, run: 
     
-    $ mkdir your-app-name
-    $ gem install make_it_so
-    $ make_it_so rails your-app-name
-
-# Usage
-
-??
+    $ git clone https://github.com/AlexDeLucas/cleanups.git
+    $ cd cleanups
 
 # Development
 
+Run the following to install dependences:
+
+    $ bundle
+
+Set up the database:
+
+    $ rake db:setup
+
+Start the development server:
+
+    $ rails s
+
+Launch http://localhost:3000/ in the browser.
+
 For checking email in development, mailcatcher is used. To get started, run `gem install mailcatcher` and then `mailcatcher` to start the server. Please refer to the [mailcatcher documentation](https://mailcatcher.me) for more information.
 
-??
-
-# Other Stuff? Generated automatically, not sure if I need this...
-* Database initialization ?
-
-* Deployment instructions ?
+# Deployment?
 
 # TODO
 

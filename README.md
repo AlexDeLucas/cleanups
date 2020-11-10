@@ -36,7 +36,7 @@ Launch http://localhost:3000/ in the browser.
 
 For checking email in development, mailcatcher is used. To get started, run `gem install mailcatcher` and then `mailcatcher` to start the server. Please refer to the [mailcatcher documentation](https://mailcatcher.me) for more information.
 
-# Deployment?
+# Deployment
 
 # TODO
 

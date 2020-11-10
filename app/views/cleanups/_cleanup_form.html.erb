@@ -6,55 +6,46 @@
     <%= f.label :title, "Title*" %><br />
     <%= f.text_field :title %>
 </div>
-
 <div class="field">
     <%= f.label :posted_by, "Posted By*" %><br />
     <%= f.text_field :posted_by %>
 </div>
-
 <div class="field">
     <%= f.label :date, "Date*" %><br />
     <%= f.date_select :date %>
 </div>
-
 <div class="field">
     <%= f.label :state, "State*" %><br />
     <%= f.select(:state, @state_collection) %>
 </div>
-
 <div class="field">
     <%= f.label :city, "City*" %><br />
     <%= f.text_field :city %>
 </div>
-
 <div class="field">
     <%= f.label :cleanup_type, "Cleanup Type*" %><br />
     <%= collection_radio_buttons :cleanup, :cleanup_type, @cleanup_type_collection, :first, :last %>
 </div>
-
 <div class="field">
     <%= f.label :volunteers, "Number of Volunteers*" %><br />
     <%= f.number_field :volunteers %>
 </div>
-
 <div class="field">
     <%= f.label :total_trash, "Total Trash (lbs.)*" %><br />
     <%= f.number_field :total_trash %>
 </div>
-
 <div class="field">
     <%= f.label :description, "Description (optional)" %><br />
     <%= f.text_area :description %>
 </div>
-
 <div class="callout">
 <div class="field">
     <p>Add a photo from your cleanup (optional):</p>
     <%= f.file_field :cleanup_photo %>
-  </div>
-  <div class="field">
+</div>
+<div class="field">
     <% if f.object.cleanup_photo? %>
-    <%= image_tag f.object.cleanup_photo.thumb.url %>
+        <%= image_tag f.object.cleanup_photo.thumb.url %>
     <%= f.label :remove_cleanup_photo %> 
     <%= f.check_box :remove_cleanup_photo %>
     <% end %>

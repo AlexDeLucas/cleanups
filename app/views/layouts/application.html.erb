@@ -6,7 +6,8 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+  
+<body> 
   
   <nav class="top-bar">
     <h1>
@@ -14,12 +15,12 @@
     </h1>
     <div class="top-bar-left">
       <ul class="menu">
-      <%- if current_user -%>
-        <%= link_to "My Cleanups", user_path(current_user), {:style=>'color:#FEFEFE;'} %>
-      <%- end -%>  
-      <%= link_to "View Cleanups", cleanups_path, {:style=>'color:#FEFEFE;'} %> 
-      <%= link_to "Log A Cleanup", new_cleanup_path, {:style=>'color:#FEFEFE;'} %>
-      <%= link_to "About", details_path, {:style=>'color:#FEFEFE;'} %>
+        <%- if current_user -%>
+          <%= link_to "My Cleanups", user_path(current_user), {:style=>'color:#FEFEFE;'} %>
+        <%- end -%>  
+        <%= link_to "View Cleanups", cleanups_path, {:style=>'color:#FEFEFE;'} %> 
+        <%= link_to "Log A Cleanup", new_cleanup_path, {:style=>'color:#FEFEFE;'} %>
+        <%= link_to "About", details_path, {:style=>'color:#FEFEFE;'} %>
       </ul>
     </div>
 

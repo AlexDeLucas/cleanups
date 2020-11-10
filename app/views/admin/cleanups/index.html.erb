@@ -9,18 +9,17 @@
       <th width="250">Action</th>    
     </tr>
   </thead>
-
   <tbody>
-  <% @cleanups.each do |cleanup| %>
+    <% @cleanups.each do |cleanup| %>
     <tr>
-    <td><%= cleanup.posted_by %></td> 
-    <td><%= link_to cleanup.title, cleanup %></td> 
-    <td><%=
-       link_to "Delete",
-       admin_cleanup_path(cleanup),
-       method: :delete
-    %></td>
+      <td><%= cleanup.posted_by %></td> 
+      <td><%= link_to cleanup.title, cleanup %></td> 
+      <td><%=
+        link_to "Delete",
+        admin_cleanup_path(cleanup),
+        method: :delete
+      %></td>
     </tr>   
     <% end %>
-    </tbody>
-    </table>
+  </tbody>
+</table>

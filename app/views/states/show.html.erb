@@ -6,14 +6,14 @@
   </ul>
 </nav>
 
-<div>
-<% if @state_trash >= 1 %>
-<div class="circle"><br />State Trash Total: <br /> <%= @state_trash %> lbs.</div>
-</div>
-<% end %>
+  <div>
+    <% if @state_trash >= 1 %>
+      <div class="circle"><br />State Trash Total: <br /> <%= @state_trash %> lbs.</div>
+  </div>
+  <% end %>
+
 <h1><%= "Cleanups By State/Territory: #{@state_name}" %></h1>
 <h3>Locations where cleanups have been logged will be linked below.</h3>
-
 
 <table class= "hover">
   <thead>
@@ -24,7 +24,7 @@
   <tbody>
     <div>
       <% @cleanup_cities.each do |cleanup| %>
-      <tr><td><%= link_to cleanup, state_city_path(params[:id], cleanup) %></td></tr>
+        <tr><td><%= link_to cleanup, state_city_path(params[:id], cleanup) %></td></tr>
       <% end %>
     </div>
   </tbody>

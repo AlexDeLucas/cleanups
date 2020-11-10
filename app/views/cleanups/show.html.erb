@@ -15,41 +15,34 @@
 </div>
 
   <table class= "hover">
-  <thead>
-    <tr>
-      <th width="125">Date</th>
-      <th width="125">Posted By</th>
-      <th width="125">City</th> 
-      <th width="75">State</th> 
-      <th width="100">Cleanup Type</th> 
-      <th width="100">Total Volunteers</th> 
-      <th width="100">Total Trash (lbs.)</th> 
-      <th>Description</th>    
-    </tr>
-  </thead>
+    <thead>
+      <tr>
+        <th width="125">Date</th>
+        <th width="125">Posted By</th>
+        <th width="125">City</th> 
+        <th width="75">State</th> 
+        <th width="100">Cleanup Type</th> 
+        <th width="100">Total Volunteers</th> 
+        <th width="100">Total Trash (lbs.)</th> 
+        <th>Description</th>    
+      </tr>
+    </thead>
   <tbody>
     <tr>
       <td><%= @cleanup.date.strftime("%m-%d-%Y") %></td>
-
-      <td><%= @cleanup.posted_by %></td>
-   
+      <td><%= @cleanup.posted_by %></td>   
       <td><%= @cleanup.city %></td>
- 
       <td><%= @cleanup.state %></td>
-  
       <td><%= @cleanup.cleanup_type %></td>
-   
       <td><%= @cleanup.volunteers %></td>
-   
       <td><%= @cleanup.total_trash %></td>
-   
       <td><%= @cleanup.description %></td>
     </tr>    
   </tbody>
 </table>
 
 <div class="grid-container">
-  <div class="grid-x grid-margin-x small-up-2 medium-up-4">
+<div class="grid-x grid-margin-x small-up-2 medium-up-4">
   <% if @cleanup.cleanup_photo? %>
     <div class="cell">
       <div class="card">
@@ -58,16 +51,16 @@
         </div>
       </div>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 </div>
 
 <nav class="bottom-bar">
     <div class="bottom-bar-left">
       <ul class="menu">  
       <% if current_user == @cleanup.user %>
-      <%= link_to 'My Cleanups', user_path %>
-      <%= link_to 'Edit Cleanup', edit_cleanup_path %> 
+        <%= link_to 'My Cleanups', user_path %>
+        <%= link_to 'Edit Cleanup', edit_cleanup_path %> 
       <% end %>
       </ul>
     </div>

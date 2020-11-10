@@ -5,5 +5,4 @@ class CitiesController < ApplicationController
         @cleanups = Cleanup.where(city: params[:id]).sort_by { |date| date }
         @city_name = params[:id]
     end
-
 end

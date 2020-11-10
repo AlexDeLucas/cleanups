@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
     before_action :ensure_admin_user!
+    
     def index
         @users = User.all  
     end
@@ -8,7 +9,7 @@ class Admin::UsersController < ApplicationController
         @user = User.find(params[:id])
         @user.destroy
         redirect_to admin_users_path, notice: 'User deleted'
-      end
+    end
 
     private
 

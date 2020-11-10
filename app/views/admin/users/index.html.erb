@@ -1,15 +1,15 @@
 <h1>Admin: List of Users</h1>
 <h4>To see the list of cleanup events, click here: <%= link_to "Cleanups", admin_cleanups_path %></h4>
 
-    <ol>
+  <ol>
     <% @users.each do |user| %>
-        <li>
+    <li>
         <%= user.email %> |
         <%=
             link_to "Delete",
             admin_user_path(user),
             method: :delete
         %>
-        </li>
+    </li>
     <% end %>
-    </ol>
+  </ol>

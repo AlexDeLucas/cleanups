@@ -1,5 +1,6 @@
 class Admin::CleanupsController < ApplicationController
     before_action :ensure_admin_user!
+    
     def index
         @cleanups = Cleanup.all.order(:posted_by)
     end
@@ -8,7 +9,7 @@ class Admin::CleanupsController < ApplicationController
         @cleanup = Cleanup.find(params[:id])
         @cleanup.destroy
         redirect_to admin_cleanups_path, notice: 'Cleanup deleted'
-      end
+    end
 
     private
 

@@ -1,6 +1,8 @@
 # Cleanups
 
-A Ruby on Rails app that enables the logging and viewing of data from cleanup events organized by individuals or groups. Cleanup records are organized at the state, city, and individual cleanup level.  
+A Ruby on Rails app that enables the logging and viewing of data from cleanup events organized by individuals or groups. Cleanup records are organized at the state, city, and individual cleanup level. 
+
+[![Codeship Status for AlexDeLucas/cleanups](https://app.codeship.com/projects/60de4def-d93b-4a5e-989d-bf9924ec6313/status?branch=master)](https://app.codeship.com/projects/417844)
 
 # System dependencies
 

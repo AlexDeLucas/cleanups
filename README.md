@@ -38,6 +38,8 @@ For checking email in development, mailcatcher is used. To get started, run `gem
 
 # Deployment
 
+When ready, this project code can be pushed to production on Heroku. Follow the documentation for [Heroku with Rails 5.x](https://devcenter.heroku.com/articles/getting-started-with-rails5).
+
 # TODO
 
 * Build a community cleanups event dashboard, a virtual space where users can plan future cleanups or post information about established upcoming cleanup events.

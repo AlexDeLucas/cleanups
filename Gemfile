@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem "dotenv-rails"
 end
 
 group :development do
@@ -55,3 +56,4 @@ gem 'webpacker', '~> 3.3'
 gem 'bootstrap', '~> 4.5.2'
 gem 'carrierwave'
 gem 'raphaeljs-rails'
+gem "fog-aws"

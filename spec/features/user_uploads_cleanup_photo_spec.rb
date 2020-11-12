@@ -33,6 +33,6 @@ feature 'authenticated user uploads a photo from a cleanup', %Q{
     expect(page).to have_content('Beach Cleanup at Ausable Point')
     expect(page).to have_content('Tanya M.')
     expect(page).to have_content(5)
-    expect(page).to have_css("img[src*='Ausable_Point_Beach.jpg']")
+    expect(page).to have_css("img[src*='Ausable_Point_Beach.JPG']")
   end
 end

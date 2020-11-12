@@ -25,7 +25,7 @@ feature 'authenticated user uploads a photo from a cleanup', %Q{
       fill_in 'Number of Volunteers*', with: 1
       fill_in 'Total Trash (lbs.)*', with: 5
       fill_in 'Description', with: 'Most common items were aluminum cans.'
-      attach_file :cleanup_cleanup_photo, Rails.root + 'spec/support/images/Ausable_Point_Beach.jpg' 
+      attach_file :cleanup_cleanup_photo, "#{Rails.root}/spec/support/images/Ausable_Point_Beach.jpg" 
       click_button 'Log Cleanup'
 
 

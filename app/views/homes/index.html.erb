@@ -1,1 +1,43 @@
-<h1>Welcome!</h1>
+<div class="text-center">
+  <h1>Tired of litter everywhere? Let's clean it up!</h1>
+  <h2>Use <strong>Cleanups</strong> to log and keep track of your initiatives to remove trash from roadsides, parks, beaches, etc.</h2>
+</div>
+<hr>
+
+<div class="callout secondary cell small-12 medium-4">
+  <h3>I'd like to... <%= link_to "View Cleanups", cleanups_path %></h3>
+</div>
+
+<div class="callout secondary cell small-12 medium-4">
+  <h3>I'd like to... <%= link_to "Log A Cleanup", new_cleanup_path %></h3>
+</div>
+
+<!-- images have no padding -->
+<div class="grid-container">
+  <div class="grid-x grid-margin-x small-up-2 medium-up-4">
+    <div class="cell">
+      <div class="card">
+      <%=image_tag "noun_creek_22411.png" %>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="card">
+      <%=image_tag "noun_Road_936604.png" %>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="card">
+      <%=image_tag "noun_city building_849095.png" %>
+      </div>
+    </div>
+    <div class="cell">
+      <div class="card">
+      <%=image_tag "noun_landscapes_1368885.png" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

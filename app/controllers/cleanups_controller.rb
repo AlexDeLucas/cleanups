@@ -4,7 +4,6 @@ class CleanupsController < ApplicationController
     def index
         @cleanups = Cleanup.all 
         @state_collection = Cleanup::STATES 
-        # When the user selects a state, they are taken to the show page for that state
     end
 
     # GET /cleanups/:id

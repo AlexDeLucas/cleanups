@@ -15,3 +15,24 @@
  *= require foundation_and_overrides
 
  */
+
+ .circle {
+    shape-outside: circle(50%);
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    background: #000;
+    float: right
+  }
+
+  .sky_blue_text {
+    color: #7CDBD5;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mako&display=swap');
+

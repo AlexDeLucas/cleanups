@@ -14,9 +14,9 @@ feature 'user deletes cleanup', %Q{
       visit cleanup_path(cleanup)
 
       click_link 'Edit Cleanup'
-      click_on 'Delete'
+      click_on 'Delete Cleanup'
 
-      expect(page).to have_content('Cleanup deleted')
+      expect(page).to have_content('Cleanup Deleted')
     end
 end 
     

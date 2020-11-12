@@ -9,5 +9,11 @@ Rails.application.routes.draw do
   end
   
   resources :users, :only => :show
+  resources :details, :only => :index
+
+  namespace :admin do 
+    resources :users, only: [:index, :destroy]
+    resources :cleanups, only: [:index, :destroy]
+  end
 
 end

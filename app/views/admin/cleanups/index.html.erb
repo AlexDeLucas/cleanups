@@ -1,0 +1,25 @@
+<h1>Admin: List of Cleanups</h1>
+<h4>To see the list of members, click here: <%= link_to "Users", admin_users_path %></h4>
+
+<table class= "hover">
+  <thead>
+    <tr>
+      <th width="200">User</th>
+      <th width="500">Cleanup Event</th>
+      <th width="250">Action</th>    
+    </tr>
+  </thead>
+  <tbody>
+    <% @cleanups.each do |cleanup| %>
+    <tr>
+      <td><%= cleanup.posted_by %></td> 
+      <td><%= link_to cleanup.title, cleanup %></td> 
+      <td><%=
+        link_to "Delete",
+        admin_cleanup_path(cleanup),
+        method: :delete
+      %></td>
+    </tr>   
+    <% end %>
+  </tbody>
+</table>

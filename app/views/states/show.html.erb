@@ -1,15 +1,33 @@
-<h1><%= "Cleanups for: #{@state_name}" %></h1>
+<nav aria-label="You are here:" role="navigation">
+  <ul class="breadcrumbs">
+    <li><%= link_to "Home", root_path %></li> 
+    <li><%= link_to "View Cleanups", cleanups_path %></li>
+    <li><span class="show-for-sr">Current: </span>State</li>
+  </ul>
+</nav>
+
+  <div>
+    <% if @state_trash >= 1 %>
+      <div class="circle"><br />State Trash Total: <br /> <%= @state_trash %> lbs.</div>
+  </div>
+  <% end %>
+
+<h1><%= "Cleanups By State/Territory: #{@state_name}" %></h1>
+<h3>Locations where cleanups have been logged will be linked below.</h3>
+
+<table class= "hover">
+  <thead>
+    <tr>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <div>
+      <% @cleanup_cities.each do |cleanup| %>
+        <tr><td><%= link_to cleanup, state_city_path(params[:id], cleanup) %></td></tr>
+      <% end %>
+    </div>
+  </tbody>
+</table>
 
 
-<div>
- <% @cleanup_cities.each do |cleanup| %>
-    <li><%= link_to cleanup, state_city_path(params[:id], cleanup) %></li>
-    <% end %>
-</div>
-
-<div>
-    <p>
-        <%= link_to 'Home', root_path %> |
-        <%= link_to 'Back', cleanups_path %> 
-    </p>
-</div>

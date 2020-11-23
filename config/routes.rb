@@ -16,10 +16,4 @@ Rails.application.routes.draw do
     resources :cleanups, only: [:index, :destroy]
   end
 
-  namespace :api do
-    namespace :v1 do
-      resources :cleanups, only: [:index]
-    end
-  end
-
 end

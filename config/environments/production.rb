@@ -66,7 +66,26 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = true
+
+  #ActionMailer config for production
+  config.action_mailer.default_url_options = { :host => 'cleanups-tracker.herokuapp.com', :protocol => 'https' }
+
+
+  #These settings are for sending email 
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  # ActionMailer::Base.smtp_settings = 
+  # {
+  #
+  #  :address            => 'smtp.gmail.com',
+  #  :port               => 587,
+  #  :domain             => 'gmail.com', #you can also use google.com
+  #  :authentication     => :plain,
+  #  :user_name          => 'XXXXX@gmail.com',
+  #  :password           => 'XXXXXXX'
+  #}
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

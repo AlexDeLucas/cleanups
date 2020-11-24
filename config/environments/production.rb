@@ -69,7 +69,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = true
 
   #ActionMailer config for production
-  config.action_mailer.default_url_options = { :host => 'https://cleanups-tracker.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'cleanups-tracker.herokuapp.com', :protocol => 'https' }
 
 
   #These settings are for sending email 
